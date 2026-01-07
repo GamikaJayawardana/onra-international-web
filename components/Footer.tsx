@@ -14,7 +14,7 @@ export default function Footer() {
                     {/* Column 1: Brand Info */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-2 mb-4">
-                            <Image src="/Logo.png" alt="Onra International Logo" width={50} height={50} className="w-10 h-10 md:w-12 md:h-12 object-contain brightness-0 invert" />
+                            <Image src="/logo-white.png" alt="Onra International Logo" width={50} height={50} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
                             <div className="text-xl md:text-2xl font-bold text-white tracking-tight">
                                 ONRA <span className="text-primary">INTL.</span>
                             </div>
