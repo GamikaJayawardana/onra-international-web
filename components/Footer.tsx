@@ -9,20 +9,20 @@ export default function Footer() {
             <div className="container mx-auto px-4">
 
                 {/* Main Footer Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
 
                     {/* Column 1: Brand Info */}
                     <div className="space-y-6">
-                        <div className="flex items-center gap-2 mb-4">
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
                             <Image src="/logo-white.png" alt="Onra International Logo" width={50} height={50} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
                             <div className="text-xl md:text-2xl font-bold text-white tracking-tight">
                                 ONRA <span className="text-primary">INTL.</span>
                             </div>
                         </div>
-                        <p className="text-sm leading-relaxed max-w-xs">
+                        <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
                             Your trusted partner in international education and migration. We help you build a global future with integrity, transparency, and expert guidance.
                         </p>
-                        <div className="flex gap-3 pt-2">
+                        <div className="flex justify-center md:justify-start gap-3 pt-2">
                             <a href="#" className="w-9 h-9 bg-gray-800 text-gray-300 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"><FaFacebookF size={14} /></a>
                             <a href="#" className="w-9 h-9 bg-gray-800 text-gray-300 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"><FaXTwitter size={14} /></a>
                             <a href="#" className="w-9 h-9 bg-gray-800 text-gray-300 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"><FaLinkedinIn size={14} /></a>
