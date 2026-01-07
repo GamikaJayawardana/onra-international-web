@@ -17,8 +17,11 @@ export default function Contact() {
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
+    // Disable 3D effect on mobile (simple check)
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!ref.current) return;
+        if (!ref.current || isMobile) return;
         const rect = ref.current.getBoundingClientRect();
         const width = rect.width;
         const height = rect.height;
@@ -49,7 +52,11 @@ export default function Contact() {
                     ref={ref}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                    style={{
+                        rotateX: isMobile ? 0 : rotateX,
+                        rotateY: isMobile ? 0 : rotateY,
+                        transformStyle: "preserve-3d"
+                    }}
                     className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto min-h-[600px]"
                 >
                     {/* Left Side - Info (Red) */}

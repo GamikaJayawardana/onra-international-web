@@ -10,7 +10,7 @@ export default function About() {
             {/* Background Decorative Blob - Top Right */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob pointer-events-none"></div>
 
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-6 md:px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
 
                     {/* Left Side - Image with Floating Card */}
