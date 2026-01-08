@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <Link
-                  href="#home"
+                  href="/#home"
                   className="hover:text-primary transition-colors hover:pl-2 duration-300 inline-block"
                 >
                   Home
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#about"
+                  href="/#about"
                   className="hover:text-primary transition-colors hover:pl-2 duration-300 inline-block"
                 >
                   About Us
@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-primary transition-colors hover:pl-2 duration-300 inline-block"
                 >
                   Services
@@ -88,7 +88,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#destinations"
+                  href="/#destinations"
                   className="hover:text-primary transition-colors hover:pl-2 duration-300 inline-block"
                 >
                   Destinations
@@ -96,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="hover:text-primary transition-colors hover:pl-2 duration-300 inline-block"
                 >
                   Contact

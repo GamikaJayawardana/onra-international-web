@@ -25,16 +25,16 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8 font-semibold text-sm text-gray-600">
-                    <Link href="#home" className="hover:text-primary transition-colors text-secondary">
+                    <Link href="/#home" className="hover:text-primary transition-colors text-secondary">
                         HOME
                     </Link>
-                    <Link href="#services" className="hover:text-primary transition-colors">
+                    <Link href="/#services" className="hover:text-primary transition-colors">
                         SERVICES
                     </Link>
-                    <Link href="#destinations" className="hover:text-primary transition-colors">
+                    <Link href="/#destinations" className="hover:text-primary transition-colors">
                         DESTINATIONS
                     </Link>
-                    <Link href="#about" className="hover:text-primary transition-colors">
+                    <Link href="/#about" className="hover:text-primary transition-colors">
                         ABOUT US
                     </Link>
                 </div>
@@ -42,7 +42,7 @@ export default function Navbar() {
                 {/* CTA Button */}
                 <div className="hidden md:block">
                     <Link
-                        href="#contact"
+                        href="/#contact"
                         className="bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-red-500/30"
                     >
                         Free Consultation <FaArrowRight />
@@ -64,28 +64,28 @@ export default function Navbar() {
                 <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg fade-in-up">
                     <div className="flex flex-col items-center p-4 space-y-4 font-semibold text-gray-600">
                         <Link
-                            href="#home"
+                            href="/#home"
                             className="hover:text-primary hover:pl-2 transition-all block"
                             onClick={toggleMenu}
                         >
                             HOME
                         </Link>
                         <Link
-                            href="#services"
+                            href="/#services"
                             className="hover:text-primary hover:pl-2 transition-all block"
                             onClick={toggleMenu}
                         >
                             SERVICES
                         </Link>
                         <Link
-                            href="#destinations"
+                            href="/#destinations"
                             className="hover:text-primary hover:pl-2 transition-all block"
                             onClick={toggleMenu}
                         >
                             DESTINATIONS
                         </Link>
                         <Link
-                            href="#about"
+                            href="/#about"
                             className="hover:text-primary hover:pl-2 transition-all block"
                             onClick={toggleMenu}
                         >
@@ -93,7 +93,7 @@ export default function Navbar() {
                         </Link>
                         <div className="pt-2">
                             <Link
-                                href="#contact"
+                                href="/#contact"
                                 className="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-sm flex justify-center items-center gap-2 transition-all shadow-lg shadow-red-500/30 w-full"
                                 onClick={toggleMenu}
                             >
