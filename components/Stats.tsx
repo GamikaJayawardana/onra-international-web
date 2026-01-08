@@ -6,14 +6,14 @@ import { useInView, useMotionValue, useSpring } from "framer-motion";
 const stats = [
     {
         id: 1,
-        value: 12,
+        value: 3,
         suffix: "+",
         label: "YEARS EXPERIENCE",
         color: "text-primary",
     },
     {
         id: 2,
-        value: 1500,
+        value: 100,
         suffix: "+",
         label: "VISAS GRANTED",
         color: "text-secondary",
@@ -27,8 +27,8 @@ const stats = [
     },
     {
         id: 4,
-        value: 3,
-        suffix: "",
+        value: 4,
+        suffix: "+",
         label: "MAJOR DESTINATIONS",
         color: "text-secondary",
     },
@@ -40,7 +40,7 @@ function Counter({ value, suffix, color }: { value: number; suffix: string; colo
     const springValue = useSpring(motionValue, {
         damping: 50,
         stiffness: 100,
-        duration: 2000,
+        duration: 1500,
     });
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 

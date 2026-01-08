@@ -8,21 +8,21 @@ import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 const slides = [
     {
         id: 1,
-        image: "/hero-london.png",
+        image: "/hero-visa-success.png",
         title: "Visa Approval Simplified",
         subtitle: "Navigate complex visa regulations with our 98% success rate. We handle the paperwork so you can focus on your dreams.",
         badge: "HIGH SUCCESS RATE",
     },
     {
         id: 2,
-        image: "/hero-canada.png",
+        image: "/hero-global-opportunities.png",
         title: "Global Opportunities Await",
-        subtitle: "Explore work and study options in top destinations. Your bridge to a brighter future starts here.",
+        subtitle: "Explore Study and Work opportunities in top destinations. Your bridge to a brighter future starts here.",
         badge: "WORK & STUDY ABROAD",
     },
     {
         id: 3,
-        image: "/hero-australia.png",
+        image: "/hero-expert-guidance.png",
         title: "Expert Guidance Every Step",
         subtitle: "From application to arrival, our expert consultants provide the support you need for a smooth journey.",
         badge: "TRUSTED CONSULTANTS",

@@ -35,6 +35,16 @@ const destinations = [
         description: "Welcoming policies, high quality of life, and excellent pathways for permanent residency. A diverse and inclusive environment for international students.",
         features: ["PGWP Available", "Top 10 Safe Countries"],
     },
+    {
+        id: 4,
+        name: "New Zealand",
+        code: "NZ",
+        image: "/hero-newzealand.png",
+        badge: "ADVENTURE",
+        badgeColor: "bg-teal-500",
+        description: "Experience world-class education amidst stunning landscapes. New Zealand offers a safe, friendly environment with a focus on innovation and research.",
+        features: ["8 Universities", "Post-Study Work Rights"],
+    },
 ];
 
 export default function Destinations() {

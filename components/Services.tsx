@@ -20,7 +20,7 @@ const services = [
     },
     {
         id: 3,
-        title: "Visit Visa",
+        title: "Visitor Visa",
         description: "Explore new destinations or visit loved ones. Our streamlined process ensures a hassle-free tourist visa experience.",
         icon: <FaPlane className="text-4xl" />,
         delay: 0.6,
