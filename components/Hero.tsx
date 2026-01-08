@@ -92,10 +92,10 @@ export default function Hero() {
                     </p>
 
                     {/* CTA Button */}
-                    <button className="bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all shadow-xl shadow-red-500/30 group">
+                    <a href="#contact" className="bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all shadow-xl shadow-red-500/30 group">
                         Talk to an Expert
                         <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </a>
                 </motion.div>
             </div>
 

@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaUserFriends, FaPlane, FaArrowRight } from "react-icons/fa";
+import { FaGraduationCap, FaUserFriends, FaPlane, FaArrowRight, FaUniversity, FaHandshake } from "react-icons/fa";
 
 const services = [
     {
@@ -9,22 +10,26 @@ const services = [
         title: "Student Visa",
         description: "Unlock your potential with world-class education. We guide you through admission to visa approval for top universities globally.",
         icon: <FaGraduationCap className="text-4xl" />,
-        delay: 0.2,
+        link: "/services/student-visas",
+        delay: 0.1,
     },
     {
         id: 2,
         title: "Dependent Visa",
         description: "Reunite with your family. We simplify the complex process of bringing your spouse, children, or parents to join you abroad.",
         icon: <FaUserFriends className="text-4xl" />,
-        delay: 0.4,
+        link: "/services/dependent-visas",
+        delay: 0.2,
     },
     {
         id: 3,
         title: "Visitor Visa",
         description: "Explore new destinations or visit loved ones. Our streamlined process ensures a hassle-free tourist visa experience.",
         icon: <FaPlane className="text-4xl" />,
-        delay: 0.6,
-    },
+        link: "/services/visitor-visas",
+        delay: 0.3,
+    }
+   
 ];
 
 export default function Services() {
@@ -58,7 +63,7 @@ export default function Services() {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
                     {services.map((service) => (
                         <motion.div
                             key={service.id}
@@ -66,30 +71,31 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: service.delay }}
-                            className="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100 transition-all duration-300 group cursor-pointer flex flex-col items-center text-center relative overflow-hidden"
                         >
-                            {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                            <Link href={service.link} className="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100 transition-all duration-300 group cursor-pointer flex flex-col items-center text-center relative overflow-hidden h-full">
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
 
-                            {/* Icon Container */}
-                            <div className="w-24 h-24 rounded-full bg-red-50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-md">
-                                <span className="text-primary group-hover:text-white transition-colors duration-300">
-                                    {service.icon}
-                                </span>
-                            </div>
+                                {/* Icon Container */}
+                                <div className="w-24 h-24 rounded-full bg-red-50 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-md">
+                                    <span className="text-primary group-hover:text-white transition-colors duration-300">
+                                        {service.icon}
+                                    </span>
+                                </div>
 
-                            <h4 className="text-2xl font-bold text-secondary mb-4 group-hover:text-primary transition-colors">
-                                {service.title}
-                            </h4>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
-                                {service.description}
-                            </p>
+                                <h4 className="text-2xl font-bold text-secondary mb-4 group-hover:text-primary transition-colors">
+                                    {service.title}
+                                </h4>
+                                <p className="text-gray-600 mb-8 leading-relaxed">
+                                    {service.description}
+                                </p>
 
-                            {/* CTA */}
-                            <div className="mt-auto flex items-center text-secondary font-bold text-sm tracking-wide gap-2 group-hover:text-primary transition-colors">
-                                LEARN MORE
-                                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                            </div>
+                                {/* CTA */}
+                                <div className="mt-auto flex items-center text-secondary font-bold text-sm tracking-wide gap-2 group-hover:text-primary transition-colors">
+                                    LEARN MORE
+                                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
