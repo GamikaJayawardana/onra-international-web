@@ -188,15 +188,15 @@ export default function Footer() {
             Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/terms-conditions" className="hover:text-white transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

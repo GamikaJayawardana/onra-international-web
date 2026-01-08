@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <main className="flex-grow">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>
