@@ -11,8 +11,9 @@ export default function StudentVisasPage() {
             <section className="relative h-[60vh] w-full items-center justify-center flex overflow-hidden">
                 <Image
                     src="/services/student-visa.png"
-                    alt="Student Visas"
+                    alt="Student Visa Consultant for Australia in Sri Lanka"
                     fill
+                    sizes="100vw"
                     className="object-cover"
                     priority
                 />

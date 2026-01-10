@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FaEye, FaFlag, FaArrowRight } from "react-icons/fa";
 
 export default function About() {
@@ -25,8 +26,9 @@ export default function About() {
               <div className="relative h-[400px] md:h-[500px] rounded-[1.5rem] overflow-hidden">
                 <Image
                   src="/about.png"
-                  alt="Onra International Office Meeting"
+                  alt="Onra International Migration Consultants in  Sri Lanka"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -101,10 +103,10 @@ export default function About() {
               </div>
             </div>
 
-            <button className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all group">
+            <Link href="/#contact" className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all group">
               Meet Our Consultants{" "}
               <FaArrowRight className="group-hover:text-red-700" />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>
