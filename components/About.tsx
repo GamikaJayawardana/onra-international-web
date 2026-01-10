@@ -67,7 +67,7 @@ export default function About() {
               Crossing Borders.
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-10">
-              Founded in 2012, Onra International has grown from a small
+              Founded in 2023, Onra International has grown from a small
               consultancy to a leading migration firm. We believe that every
               student deserves access to global education regardless of their
               background.
