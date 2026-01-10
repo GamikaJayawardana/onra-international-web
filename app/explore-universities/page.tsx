@@ -83,20 +83,22 @@ export default function ExploreUniversities() {
                                                 <FaUniversity className="text-xl" />
                                             </div>
                                             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider border border-white/10 px-2 py-1 rounded-full">
-                                                {uni.type}
+                                               {/*  {uni.type} */}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{uni.name}</h3>
+                                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                                            {/* {uni.name} */}
+                                            </h3>
 
                                         <div className="space-y-2 text-sm text-gray-400">
                                             <div className="flex items-center gap-2">
                                                 <FaMapMarkerAlt className="text-gray-600" />
-                                                {uni.location}
+                                                {/*{uni.location} */}
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <FaGraduationCap className="text-gray-600" />
-                                                {uni.ranking}
+                                                {/*{uni.ranking} */}
                                             </div>
                                         </div>
                                     </motion.div>
