@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+
 
 const destinations = [
     {
@@ -12,7 +14,7 @@ const destinations = [
         image: "/hero-australia.png",
         badge: "MOST POPULAR",
         badgeColor: "bg-yellow-500",
-        description: "World-class education, vibrant cities, and incredible post-study work opportunities. Experience the laid-back lifestyle while earning a globally recognized degree.",
+        description: "Australia is one of the most popular study destinations for international students, offering globally recognised universities, innovative teaching methods, and strong post-study work opportunities. Students enjoy a high standard of living, a multicultural society, and a safe, welcoming environment. With flexible study options, part-time work rights, and clear pathways to permanent residency, Australia is an ideal destination to build both your education and future career.",
         features: ["40+ Universities", "Post-Study Work Visa"],
     },
     {
@@ -22,7 +24,7 @@ const destinations = [
         image: "/hero-london.png",
         badge: "FAST TRACK",
         badgeColor: "bg-blue-500",
-        description: "Home to prestigious universities and a rich cultural heritage. Benefit from short 1-year master's programs and 2-year post-study work visas.",
+        description: "The UK is home to some of the world’s oldest and most respected universities. With shorter course durations, students can graduate faster and save on tuition and living costs. UK qualifications are recognised worldwide, opening doors to global career opportunities. The Graduate Route allows students to stay and work after studies, making the UK a smart choice for academic excellence and professional growth.",
         features: ["Russell Group Access", "1 Year Masters"],
     },
     {
@@ -32,7 +34,7 @@ const destinations = [
         image: "/hero-canada.png",
         badge: "PR PATHWAY",
         badgeColor: "bg-green-500",
-        description: "Welcoming policies, high quality of life, and excellent pathways for permanent residency. A diverse and inclusive environment for international students.",
+        description: "Canada offers high-quality education at comparatively affordable tuition fees, along with generous post-study work options. Known for its friendly people, safety, and inclusive culture, Canada provides students with excellent support services and real-world learning opportunities. With clear pathways to permanent residency, Canada is an excellent destination for students planning long-term settlement and career success.",
         features: ["PGWP Available", "Top 10 Safe Countries"],
     },
     {
@@ -42,7 +44,7 @@ const destinations = [
         image: "/hero-newzealand.png",
         badge: "ADVENTURE",
         badgeColor: "bg-teal-500",
-        description: "Experience world-class education amidst stunning landscapes. New Zealand offers a safe, friendly environment with a focus on innovation and research.",
+        description: "New Zealand is known for its high academic standards, innovative education system, and strong student support. With smaller class sizes, students benefit from personalised learning experiences. The country offers post-study work rights, a balanced lifestyle, and a safe, peaceful environment. New Zealand is perfect for students seeking quality education along with personal growth and wellbeing.",
         features: ["8 Universities", "Post-Study Work Rights"],
     },
 ];
@@ -134,12 +136,15 @@ export default function Destinations() {
                                         ))}
                                     </div>
 
-                                    <button className="flex items-center gap-3 text-primary font-bold tracking-wide hover:text-white transition-colors group">
+                                    <Link
+                                        href={`/explore-universities#${dest.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                        className="flex items-center gap-3 text-primary font-bold tracking-wide hover:text-white transition-colors group inline-flex"
+                                    >
                                         EXPLORE UNIVERSITIES
                                         <span className="bg-primary text-white p-2 rounded-full group-hover:translate-x-1 transition-transform">
                                             <FaArrowRight className="text-xs" />
                                         </span>
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
