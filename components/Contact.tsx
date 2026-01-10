@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react"; // Added useState
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -13,7 +13,41 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Contact() {
-  // 3D Tilt Logic
+  // --- Web3Forms Logic ---
+  const [result, setResult] = useState<string>(""); // Added result state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    setIsSubmitting(true);
+    
+    const formData = new FormData(event.currentTarget);
+    // Using the access key you provided
+    formData.append("access_key", "860b136a-933b-4079-82a1-c038cf17e6a4"); 
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        (event.target as HTMLFormElement).reset();
+      } else {
+        setResult(data.message || "Error submitting form");
+      }
+    } catch (error) {
+      setResult("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // --- Existing 3D Tilt Logic (Unchanged) ---
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -24,7 +58,6 @@ export default function Contact() {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
-  // Disable 3D effect on mobile (simple check)
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -50,7 +83,7 @@ export default function Contact() {
       id="contact"
       className="py-24 bg-dark relative overflow-hidden flex items-center justify-center"
     >
-      {/* Background Ambience */}
+      {/* Background Ambience (Unchanged) */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px]" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
@@ -71,9 +104,8 @@ export default function Contact() {
           }}
           className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto min-h-[600px]"
         >
-          {/* Left Side - Info (Red) */}
+          {/* Left Side - Info (Unchanged Design) */}
           <div className="w-full md:w-[40%] bg-primary text-white p-10 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            {/* Decorative Circles */}
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-red-700/50 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-48 h-48 bg-red-900/30 rounded-full blur-2xl pointer-events-none" />
 
@@ -131,46 +163,34 @@ export default function Contact() {
                 Follow us on social media
               </h5>
               <div className="flex gap-3">
-                <a
-                  href="https://www.facebook.com/share/1HCZdeM1wv/?mibextid=wwXIfr"
-                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
-                >
+                <a href="https://www.facebook.com/share/1HCZdeM1wv/?mibextid=wwXIfr" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
                   <FaFacebookF />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
-                >
+                <a href="#" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
                   <FaXTwitter />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
-                >
+                <a href="#" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
                   <FaLinkedinIn />
                 </a>
-                <a
-                  href="https://www.instagram.com/onra_international_?igsh=MWQ4bTcybHMxb2F6Mg%3D%3D&utm_source=qr"
-                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300"
-                >
+                <a href="https://www.instagram.com/onra_international_?igsh=MWQ4bTcybHMxb2F6Mg%3D%3D&utm_source=qr" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300">
                   <FaInstagram />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Form (White) */}
+          {/* Right Side - Form (Design Kept, Functionality Added) */}
           <div className="w-full md:w-[60%] p-10 md:p-14 bg-white text-secondary">
             <div className="mb-8">
               <h3 className="text-2xl font-bold font-heading mb-2">
                 Book an Appointment
               </h3>
               <p className="text-gray-500 text-sm">
-                We'll get back to you within 24 hours.
+                We&apos;ll get back to you within 24 hours.
               </p>
             </div>
 
-            <form className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-6"> {/* Added onSubmit */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
@@ -178,6 +198,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="first_name" // Added name attribute
+                    required
                     placeholder="John"
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                   />
@@ -188,6 +210,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="last_name" // Added name attribute
+                    required
                     placeholder="Doe"
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                   />
@@ -201,6 +225,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email" // Added name attribute
+                    required
                     placeholder="john@example.com"
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                   />
@@ -211,6 +237,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="tel"
+                    name="phone" // Added name attribute
+                    required
                     placeholder="+94 77 000 0000"
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                   />
@@ -222,15 +250,16 @@ export default function Contact() {
                   Interested Country
                 </label>
                 <select
+                  name="country" // Added name attribute
                   aria-label="Interested Country"
                   className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-gray-600"
                 >
-                  <option>Select your preferred destination</option>
-                  <option>Australia</option>
-                  <option>United Kingdom</option>
-                  <option>Canada</option>
-                  <option>New Zealand</option>
-                  <option>Other</option>
+                  <option value="">Select your preferred destination</option>
+                  <option value="Australia">Australia</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="New Zealand">New Zealand</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -239,17 +268,27 @@ export default function Contact() {
                   Your Message
                 </label>
                 <textarea
+                  name="message" // Added name attribute
                   rows={3}
+                  required
                   placeholder="Briefly describe your educational background and goals..."
                   className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
                 ></textarea>
               </div>
 
+              {/* Added submission status text */}
+              {result && (
+                <div className={`text-sm font-bold ${result.includes("Successfully") ? "text-green-600" : "text-red-600"}`}>
+                  {result}
+                </div>
+              )}
+
               <button
-                type="button"
-                className="w-full bg-secondary hover:bg-black text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                type="submit" // Changed from type="button" to submit
+                disabled={isSubmitting}
+                className={`w-full bg-secondary hover:bg-black text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                Book Free Appointment
+                {isSubmitting ? "Sending..." : "Book Free Appointment"}
               </button>
             </form>
           </div>
