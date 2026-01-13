@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Onra International | Student Visa Consultant Sri Lanka",
   description:
     "Leading migration agency in Sri Lanka. Expert guidance for Student, Dependent, and Visitor visas to Australia, Canada, and New Zealand. 98% success rate.",
+  icons: {
+    icon: "/icon.svg", 
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
